@@ -17,6 +17,30 @@
       "speed":1,
       "file":"https://github.com/INEEDCHATPROGRAAAAAMS/MusicFiles/raw/main/JBG.dfpwm",
       "time":242
+    },
+    {
+      "type":"song",
+      "name":"Lacrimiku",
+      "author":"UNKNOWN",
+      "speed":1,
+      "file":"https://github.com/INEEDCHATPROGRAAAAAMS/MusicFiles/raw/main/Lacrimiku.dfpwm",
+      "time":96
+    },
+    {
+      "type":"song",
+      "name":"Duvet",
+      "author":"BOA",
+      "speed":1,
+      "file":"https://github.com/INEEDCHATPROGRAAAAAMS/MusicFiles/raw/main/B%C3%B4a%20-%20Duvet%20(Lyrics).dfpwm",
+      "time":203
+    },
+    {
+      "type":"song",
+      "name":"Merry Go Round Of Life",
+      "author":"Unknown",
+      "speed":1,
+      "file":"https://github.com/INEEDCHATPROGRAAAAAMS/MusicFiles/raw/main/MGR.dfpwm",
+      "time":41
     }
   ]
 }
