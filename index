@@ -1,0 +1,22 @@
+{
+  "latestVersion": "2.6.0",
+  "indexName":"CAlpha",
+  "songs": [
+    {
+      "type":"song",
+      "name":"Still Alive, Portal",
+      "author":"Valve Team",
+      "speed":1,
+      "file":"https://github.com/OmriOn/musicify-songs/raw/main/stillalive.dfpwm",
+      "time":153
+    },
+    {
+      "type":"song",
+      "name":"Johnny B Goode",
+      "author":"Chuck Berry",
+      "speed":1,
+      "file":"https://github.com/INEEDCHATPROGRAAAAAMS/MusicFiles/raw/main/JBG.dfpwm",
+      "time":242
+    }
+  ]
+}
