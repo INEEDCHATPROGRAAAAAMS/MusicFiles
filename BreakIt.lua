@@ -42,15 +42,25 @@ local real_io_open = io.open
 io.open = function(path, mode)
   log("[io.open]", path, mode)
   local fh = real_io_open(path, mode)
-  if fh and fh.write then
+
+  -- If it's userdata (C file handle), we cannot override methods
+  if fh and type(fh) == "userdata" then
+    log("[io.open] file handle is userdata, cannot wrap .write")
+    return fh
+  end
+
+  -- If it's a Lua object with methods, wrap .write
+  if fh and type(fh) == "table" and fh.write then
     local real_fh_write = fh.write
     fh.write = function(self, data)
       log("[file.write]", path, "len=", #tostring(data))
       return real_fh_write(self, data)
     end
   end
+
   return fh
 end
+
 
 -- Optional: catch env swapping / dump tricks
 if string and string.dump then
