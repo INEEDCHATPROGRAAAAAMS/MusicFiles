@@ -37,29 +37,21 @@ load = function(chunk, ...)
   return real_load(chunk, ...)
 end
 
--- LOG file creation + dump writes
 local real_io_open = io.open
 io.open = function(path, mode)
   log("[io.open]", path, mode)
+
   local fh = real_io_open(path, mode)
 
-  -- If it's userdata (C file handle), we cannot override methods
-  if fh and type(fh) == "userdata" then
-    log("[io.open] file handle is userdata, cannot wrap .write")
-    return fh
-  end
-
-  -- If it's a Lua object with methods, wrap .write
-  if fh and type(fh) == "table" and fh.write then
-    local real_fh_write = fh.write
-    fh.write = function(self, data)
-      log("[file.write]", path, "len=", #tostring(data))
-      return real_fh_write(self, data)
-    end
+  if fh then
+    log("[io.open OK]", path, mode, "type=", type(fh))
+  else
+    log("[io.open FAILED]", path, mode)
   end
 
   return fh
 end
+
 
 
 -- Optional: catch env swapping / dump tricks
